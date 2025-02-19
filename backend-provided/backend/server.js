@@ -6,12 +6,13 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = 5000;
+const PORT = 5000; // Server listens on Port 5000
 const cors = require('cors');
 
 app.use(cors()); // Use cors to allow requests from the frontend
 
-// Get the users.json file
+// API to get user data
+// Front end sends a request to this API (localhost5000) to get user data
 app.get('/api/users', (req, res) => {
     res.sendFile(path.join(__dirname, 'data', 'users.json'))
 });
